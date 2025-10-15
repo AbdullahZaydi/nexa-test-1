@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - AI Assistant</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="logo">🤖</span>
+        <span class="brand-text">Nexa AI Assistant</span>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Submit Task</a>
+        <a href="/dashboard" class="nav-link active">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="dashboard-header">
+      <h1 class="dashboard-title">Task Dashboard</h1>
+      <div class="refresh-indicator">
+        <span class="refresh-dot"></span>
+        <span>Auto-refreshing every 2s</span>
+      </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card">
+        <div class="stat-icon">📋</div>
+        <div class="stat-content">
+          <div class="stat-value" id="totalTasks">0</div>
+          <div class="stat-label">Total Tasks</div>
+        </div>
+      </div>
+      
+      <div class="stat-card stat-pending">
+        <div class="stat-icon">⏳</div>
+        <div class="stat-content">
+          <div class="stat-value" id="pendingTasks">0</div>
+          <div class="stat-label">In Queue</div>
+        </div>
+      </div>
+      
+      <div class="stat-card stat-processing">
+        <div class="stat-icon">⚙️</div>
+        <div class="stat-content">
+          <div class="stat-value" id="processingTasks">0</div>
+          <div class="stat-label">Processing</div>
+        </div>
+      </div>
+      
+      <div class="stat-card stat-completed">
+        <div class="stat-icon">✅</div>
+        <div class="stat-content">
+          <div class="stat-value" id="completedTasks">0</div>
+          <div class="stat-label">Completed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Queue Section -->
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">
+          <span class="pulse-dot"></span>
+          Queue Status
+        </h2>
+        <span class="badge" id="queueCount">0 tasks</span>
+      </div>
+      <div id="queueList" class="task-list">
+        <div class="empty-state">
+          <div class="empty-icon">📭</div>
+          <p>No tasks in queue</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Processing Section -->
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Currently Processing</h2>
+        <span class="badge badge-processing" id="processingCount">0 tasks</span>
+      </div>
+      <div id="processingList" class="task-list">
+        <div class="empty-state">
+          <div class="empty-icon">💤</div>
+          <p>No tasks being processed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Completed Tasks Section -->
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Completed Tasks</h2>
+        <span class="badge badge-success" id="completedCount">0 tasks</span>
+      </div>
+      <div id="completedList" class="task-list">
+        <div class="empty-state">
+          <div class="empty-icon">🎯</div>
+          <p>No completed tasks yet</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
+

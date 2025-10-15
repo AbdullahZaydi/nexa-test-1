@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Assistant - Task Submission</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="logo">🤖</span>
+        <span class="brand-text">Nexa AI Assistant</span>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link active">Submit Task</a>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="hero">
+      <h1 class="hero-title">AI Task Assistant</h1>
+      <p class="hero-subtitle">Submit your business tasks and let AI process them intelligently</p>
+    </div>
+
+    <div class="card main-card">
+      <h2 class="card-title">Submit New Task</h2>
+      
+      <form id="taskForm" class="task-form">
+        <div class="form-group">
+          <label for="taskDescription" class="form-label">Task Description</label>
+          <textarea 
+            id="taskDescription" 
+            name="description" 
+            class="form-input" 
+            rows="4" 
+            placeholder="e.g., Analyze leads from last quarter, Summarize client calls, Update client report..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="taskType" class="form-label">Task Type</label>
+          <select id="taskType" name="type" class="form-select">
+            <option value="general">General Task</option>
+            <option value="analyze_leads">Analyze Leads</option>
+            <option value="summarize_calls">Summarize Calls</option>
+            <option value="update_client_report">Update Client Report</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          <span class="btn-text">Submit Task</span>
+          <span class="btn-loader" style="display: none;">Processing...</span>
+        </button>
+      </form>
+
+      <div id="notification" class="notification" style="display: none;"></div>
+    </div>
+
+    <div class="info-section">
+      <div class="info-card">
+        <div class="info-icon">⚡</div>
+        <h3>Fast Processing</h3>
+        <p>Tasks are processed within 2-5 seconds</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🎯</div>
+        <h3>Smart Analysis</h3>
+        <p>AI-powered insights and recommendations</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📊</div>
+        <h3>Real-time Updates</h3>
+        <p>Track your tasks on the dashboard</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
+
